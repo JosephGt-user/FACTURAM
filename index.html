@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Factura de Agua - San Pedro Carchá (Térmica + Georeporte)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Factura de Agua - San Pedro Carchá | Móvil + Térmica</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,9 +24,7 @@
         <div class="section">
             <div class="section-title">📈 HISTORIAL (m³)</div>
             <table class="consumo-table">
-                <thead>
-                    <tr><th>Mes</th><th>Lectura</th><th>Var.</th></tr>
-                </thead>
+                <thead><tr><th>Mes</th><th>Lectura</th><th>Var.</th></tr></thead>
                 <tbody>
                     <tr><td>Diciembre</td><td>3,674</td><td>—</td></tr>
                     <tr><td>Enero</td><td>3,699</td><td class="trend-up">+25 ▲</td></tr>
@@ -50,12 +48,15 @@
 
         <div class="deadline">
             📅 <strong>Pague antes del 25 de marzo 2026</strong><br>
+            🎯 <span class="highlight-date">5% de descuento</span> si paga antes del <strong>18 de marzo</strong><br>
+            💰 Ahorro: Q 49.80
         </div>
 
-        <!-- Botón de geoposición para reporte de fugas -->
+        <!-- Botón grande táctil para reporte de fuga -->
         <button class="btn-geo" id="reportFugaBtn">📍 REPORTAR FUGA CON MI UBICACIÓN</button>
         <div id="geoStatus" class="geo-status"></div>
 
+        <div class="fake-qr">[ PAGO EN LÍNEA ]<br>qr.muniscarcha.gt/687B45</div>
         <div class="contact">
             📞 WhatsApp: 1234-5678 | 📧 aguapet@muniscarcha.gob<br>
             🚰 Atención 24h
@@ -72,7 +73,7 @@
         </div>
     </div>
 
-    <button class="print-btn" onclick="window.print();">🖨️ Imprimir (papel térmico)</button>
+    <button class="print-btn" onclick="window.print();">🖨️ Imprimir (papel térmico 80mm)</button>
 
     <script src="script.js"></script>
 </body>
