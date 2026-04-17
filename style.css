@@ -15,28 +15,25 @@ body {
     padding: 16px;
 }
 
-/* Estilo base: móvil primero (ocupa casi todo el ancho con márgenes) */
+/* Estilo base: móvil primero */
 .thermal-ticket {
     max-width: 95%;
     width: 100%;
     background: white;
     color: black;
-    border-radius: 16px;       /* bordes suaves en móvil */
+    border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     padding: 20px 16px;
     border: 1px solid #ddd;
-    transition: all 0.2s;
 }
 
-/* Para pantallas más grandes que 400px, limitamos el ancho estilo ticket */
 @media (min-width: 401px) {
     .thermal-ticket {
-        max-width: 360px;      /* similar a térmica 80mm */
+        max-width: 360px;
         border-radius: 12px;
     }
 }
 
-/* Encabezado */
 .header {
     text-align: center;
     border-bottom: 1px dashed #aaa;
@@ -58,7 +55,6 @@ body {
     margin-top: 6px;
 }
 
-/* Secciones */
 .section {
     margin-bottom: 18px;
     border-bottom: 1px dotted #ccc;
@@ -74,7 +70,6 @@ body {
     border-left: 4px solid #2c7da0;
 }
 
-/* Info usuario */
 .info-row {
     display: flex;
     justify-content: space-between;
@@ -93,7 +88,6 @@ body {
     border-radius: 8px;
 }
 
-/* Tabla de consumos */
 .consumo-table {
     width: 100%;
     font-size: 0.8rem;
@@ -118,7 +112,6 @@ body {
     color: #555;
 }
 
-/* Líneas de montos */
 .amount-line {
     display: flex;
     justify-content: space-between;
@@ -135,7 +128,6 @@ body {
     border-radius: 4px;
 }
 
-/* Fecha límite */
 .deadline {
     background: #e7f1f5;
     padding: 12px;
@@ -149,7 +141,6 @@ body {
     color: #c4450c;
 }
 
-/* Botón táctil para geolocalización */
 .btn-geo {
     display: block;
     width: 100%;
@@ -163,7 +154,7 @@ body {
     margin: 16px 0 10px 0;
     cursor: pointer;
     text-align: center;
-    border-radius: 40px;          /* fácil de tocar */
+    border-radius: 40px;
     transition: background 0.2s;
 }
 .btn-geo:active {
@@ -180,7 +171,6 @@ body {
     border-radius: 8px;
 }
 
-/* QR falso y contacto */
 .fake-qr {
     text-align: center;
     font-size: 0.7rem;
@@ -215,7 +205,6 @@ hr {
     margin: 10px 0;
 }
 
-/* Botón de imprimir */
 .print-btn {
     font-family: system-ui;
     margin-top: 20px;
@@ -229,7 +218,7 @@ hr {
     font-size: 1rem;
 }
 
-/* Estilos para impresión térmica (papel 80mm) */
+/* ESTILOS PARA IMPRESIÓN TÉRMICA */
 @media print {
     body {
         background: white;
@@ -238,7 +227,7 @@ hr {
     }
     .thermal-ticket {
         max-width: 100%;
-        width: 80mm;           /* ancho fijo para térmica */
+        width: 80mm;           /* ancho fijo para papel térmico */
         margin: 0 auto;
         padding: 8px 6px;
         box-shadow: none;
@@ -246,18 +235,17 @@ hr {
         border-radius: 0;
         background: white;
     }
-    .btn-geo, .print-btn {
-        background: #eee;
-        color: black;
-        border: 1px solid #aaa;
+    /* Ocultar botones en la impresión */
+    .btn-geo,
+    .print-btn {
+        display: none !important;
+    }
+    /* Asegurar que otros elementos se vean bien */
+    .geo-status {
+        display: none !important;  /* también ocultamos el estado de geolocalización */
+    }
+    .deadline, .total-box, .section-title {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
-    }
-    .geo-status, .deadline, .total-box, .section-title {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-    .btn-geo:active {
-        transform: none;
     }
 }

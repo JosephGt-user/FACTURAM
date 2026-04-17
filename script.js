@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const precision = position.coords.accuracy ? `±${Math.round(position.coords.accuracy)}m` : '';
                 const mapsLink = `https://maps.google.com/?q=${lat},${lng}`;
                 const whatsappMsg = `Hola, reporto una FUGA DE AGUA en mi zona. Mi ubicación aproximada: ${lat},${lng} (${precision}). ${mapsLink}`;
-                // Cambiar el número por el oficial de la municipalidad
                 const whatsappUrl = `https://wa.me/50212345678?text=${encodeURIComponent(whatsappMsg)}`;
 
                 statusDiv.innerHTML = `✅ Ubicación obtenida:<br>🌐 ${lat.toFixed(5)}, ${lng.toFixed(5)} ${precision}<br>
