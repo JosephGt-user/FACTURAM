@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Factura de Agua - San Pedro Carchá (Térmica + Georeporte)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="thermal-ticket" id="ticket">
+        <div class="header">
+            <h1>MUNICIPALIDAD DE SAN PEDRO CARCHÁ</h1>
+            <p>Agua Potable y Alcantarillado<br>Alta Verapaz - Guatemala</p>
+            <div class="nit">NIT: 12101609-9 | Servicio 00687B45</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">👤 USUARIO</div>
+            <div class="info-row"><span class="info-label">Nombre:</span><span>EDUARDO GUAY CHAVARRIA</span></div>
+            <div class="info-row"><span class="info-label">Tarjeta:</span><span>02-08-43</span></div>
+            <div class="address">📍 Dirección: San Pedro Carchá, zona urbana</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📈 HISTORIAL (m³)</div>
+            <table class="consumo-table">
+                <thead>
+                    <tr><th>Mes</th><th>Lectura</th><th>Var.</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Diciembre</td><td>3,674</td><td>—</td></tr>
+                    <tr><td>Enero</td><td>3,699</td><td class="trend-up">+25 ▲</td></tr>
+                    <tr><td>Febrero</td><td>3,715</td><td class="trend-up">+16 ▲</td></tr>
+                    <tr><td><strong>Marzo (actual)</strong></td><td colspan="2"><em>lectura pendiente</em></td></tr>
+                </tbody>
+            </table>
+            <div class="nota">🔍 Lectura acumulativa. Consumo = actual - anterior.</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">💰 DETALLE DE TARIFA</div>
+            <div class="amount-line"><span>💧 Agua potable</span><span>Q 800.00</span></div>
+            <div class="amount-line"><span>🚽 Alcantarillado</span><span>Q 196.00</span></div>
+            <div class="amount-line"><span>📆 Saldo anterior</span><span>Q 0.00</span></div>
+            <hr>
+            <div class="total-box">
+                <div class="amount-line"><strong>TOTAL A PAGAR (marzo)</strong><strong>Q 996.00</strong></div>
+            </div>
+        </div>
+
+        <div class="deadline">
+            📅 <strong>Pague antes del 25 de marzo 2026</strong><br>
+        </div>
+
+        <!-- Botón de geoposición para reporte de fugas -->
+        <button class="btn-geo" id="reportFugaBtn">📍 REPORTAR FUGA CON MI UBICACIÓN</button>
+        <div id="geoStatus" class="geo-status"></div>
+
+        <div class="contact">
+            📞 WhatsApp: 1234-5678 | 📧 aguapet@muniscarcha.gob<br>
+            🚰 Atención 24h
+        </div>
+
+        <div class="auto-lectura">
+            ✍️ <strong>Autolectura del medidor:</strong> _________________ m³<br>
+            <span class="nota">(Anote su lectura y compárela con la próxima factura)</span>
+        </div>
+
+        <div class="footer">
+            ✅ Factura válida para pago en bancos, agencias o QR.<br>
+            Gracias por contribuir al agua potable.
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print();">🖨️ Imprimir (papel térmico)</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
